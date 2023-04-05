@@ -1,5 +1,12 @@
+import "normalize.css";
+
+import Login from "./Login";
 function App() {
-  return <div>안녕</div>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 }
 
 export default App;
