@@ -4,16 +4,20 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
 const Login = () => {
   const Contain = styled.div`
-    min-height: auto;
-    margin-top: 20vw;
+    margin-top: 20rem;
     position: relative;
 
     img {
       width: 100%;
-      height: 27vw;
+      height: 26rem;
     }
   `;
   const Logo = styled.div`
+    @media (max-width: 1000px) {
+      & {
+        display: none;
+      }
+    }
     position: absolute;
     top: -8vw;
     width: 30vw;
@@ -31,66 +35,63 @@ const Login = () => {
     position: absolute;
     top: -8vw;
     right: 13vw;
-    width: 30vw;
-    height: 30vw;
+    width: 30rem;
+    height: 30rem;
     background-color: white;
-    border-radius: 1.5em;
+    border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     img {
-      margin-top: 2vw;
-      width: 20vw;
-      height: 4vw;
+      margin-top: 2rem;
+      width: 20rem;
+      height: 4rem;
     }
     hr {
-      margin-top: 1vw;
+      margin-top: 1rem;
       border: 1px solid rgba(100, 100, 100, 0.1);
       width: 80%;
     }
-
     p {
       color: #69b030;
-      font-size: 2vw;
+      font-size: 2rem;
       font-weight: 700;
       width: 80%;
       text-align: left;
-      margin: 2vw 0vw 1vw 0vw;
+      margin: 2rem 0rem 1rem 0rem;
     }
     form {
       position: relative;
       width: 80%;
-
       input {
         background-color: rgba(0, 0, 0, 0.1);
         border: none;
         width: 100%;
-        height: 3vw;
-        border-radius: 0.5vw;
-        margin-bottom: 0.4vw;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-bottom: 0.4rem;
       }
-
       button {
         width: 100%;
-        height: 3vw;
+        height: 3rem;
         background-color: #69b030;
         border: none;
-        border-radius: 0.5vw;
+        border-radius: 0.5rem;
         color: white;
         font-weight: 700;
       }
     }
     div {
-      height: 5vw;
-      margin-top: 3vw;
-      border-radius: 0 0 1.5em 1.5em;
+      height: 5rem;
+      margin-top: 3rem;
+      border-radius: 0 0 1.5rem 1.5rem;
       background-color: #252553;
       width: 100%;
       text-align: center;
-      padding: 2vw;
+      padding: 2rem;
       span {
         color: white;
-        margin-left: 2vw;
+        margin-left: 2rem;
       }
     }
   `;
@@ -118,8 +119,8 @@ const Login = () => {
             size="xl"
             style={{
               position: "absolute",
-              left: "22vw",
-              top: "0.7vw",
+              left: "22rem",
+              top: "0.7rem",
               opacity: 0.2,
             }}
           />
@@ -129,8 +130,8 @@ const Login = () => {
             size="xl"
             style={{
               position: "absolute",
-              left: "22vw",
-              top: "4vw",
+              left: "22rem",
+              top: "4rem",
               opacity: 0.2,
             }}
           />
