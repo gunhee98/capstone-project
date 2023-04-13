@@ -3,21 +3,20 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
 
-function App() {
+function Data() {
   const [data, setData] = useState([]);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
   useEffect(() => {
-    // Firebase 프로젝트에 연결합니다.
+    
     firebase.initializeApp({
       projectId: "capstone-d844e",
     });
 
-    // Firestore 인스턴스를 생성합니다.
     const db = firebase.firestore();
 
-    // Firestore 데이터를 가져와서 state에 저장합니다.
+    
     db.collection("privacy").get().then((querySnapshot) => {
       const fetchedData = [];
       querySnapshot.forEach((doc) => {
@@ -28,15 +27,14 @@ function App() {
   }, []);
 
   const handleAddData = () => {
-    // Firebase 프로젝트에 연결합니다.
+   
     firebase.initializeApp({
       projectId: "capstone-d844e",
     });
 
-    // Firestore 인스턴스를 생성합니다.
+
     const db = firebase.firestore();
 
-    // 데이터를 추가합니다.
     db.collection("privacy").add({
       email: email,
       name: name,
@@ -75,4 +73,4 @@ function App() {
 }
 
 
-export default App;
+export default Data;
