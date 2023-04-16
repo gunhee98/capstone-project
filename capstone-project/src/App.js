@@ -10,13 +10,14 @@ import Seongjeog from "./Seongjeog";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Sidebar>
-        <Routes>
-          <Route path="/seongjeog" element={<Seongjeog />} />
-        </Routes>
-      </Sidebar>
-    </BrowserRouter>
+    <Login/>
+    // <BrowserRouter>
+    //   <Sidebar>
+    //     <Routes>
+    //       <Route path="/seongjeog" element={<Seongjeog />} />
+    //     </Routes>
+    //   </Sidebar>
+    // </BrowserRouter>
   );
 }
 
