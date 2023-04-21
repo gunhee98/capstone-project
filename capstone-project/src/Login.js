@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const Login = () => {
   const Contain = styled.div`
     margin-top: 20rem;
@@ -135,7 +136,9 @@ const Login = () => {
               opacity: 0.2,
             }}
           />
-          <button>로그인</button>
+          <Link to="/main">
+            <button>로그인</button>
+          </Link>
         </form>
         <div>
           <span>아이디 찾기</span>
