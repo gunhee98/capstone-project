@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
@@ -26,9 +26,11 @@ const Main = () => {
     width: 100%;
     height: 100vh;
     & > div:first-child {
+      display: flex;
+      align-items: center;
       height: 4rem;
       border-bottom: 2px solid #252553;
-      & > div {
+      & > div:first-child {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -36,9 +38,38 @@ const Main = () => {
         height: 100%;
         color: white;
         background-color: #252553;
+        opacity: 0.9;
+      }
+      & > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        margin-left: 9%;
+      }
+      & > div:nth-child(3) {
+        margin-left: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & > p {
+          margin: 0;
+          margin-bottom: 3px;
+          font-weight: 700;
+          &:first-child {
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+      & > div:nth-child(4) {
+        height: 80%;
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        margin-left: 1%;
       }
     }
     & > main {
+      width: 100%;
       height: 100%;
     }
   `;
@@ -55,10 +86,21 @@ const Main = () => {
               <HiChevronLeft size="35" onClick={toggle} />
             )}
           </div>
+          <div>
+            <h1>종합정보시스템</h1>
+          </div>
+          <div>
+            <p>IT융합자율학부</p>
+            <p>김건희</p>
+          </div>
+          <div>
+            <FiLogOut size="30" />
+          </div>
         </div>
         <main>{menuItem.path === "/main" ? <Dashboard /> : <Outlet />}</main>
       </Content>
     </Container>
   );
 };
+
 export default Main;
