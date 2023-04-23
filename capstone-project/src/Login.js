@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
+
 const Login = () => {
   const Contain = styled.div`
     margin-top: 20rem;
@@ -96,6 +97,7 @@ const Login = () => {
     }
   `;
 
+
   return (
     <Contain>
       <img alt="이미지" src="https://portal.skhu.ac.kr/images/sso/sso_bg.jpg" />
@@ -112,7 +114,7 @@ const Login = () => {
         <p>통합로그인</p>
 
         <form>
-          <input type="text" placeholder="아이디" />
+          <input type="text" placeholder="아이디"/>
 
           <FontAwesomeIcon
             icon={faUser}

@@ -7,10 +7,14 @@ import Login from "./Login";
 import Sidebar from "./Sidebar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Seongjeog from "./Seongjeog";
+import Logins from "./Logins"
+import SignupModal from './SignUp.js';
+import './style.css'
+
 
 function App() {
   return (
-    <Login/>
+    <SignupModal/>
     // <BrowserRouter>
     //   <Sidebar>
     //     <Routes>
