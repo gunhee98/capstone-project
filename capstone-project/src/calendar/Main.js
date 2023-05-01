@@ -8,13 +8,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Main = () => {
-  const [nowDate, setNowDate] = useState(new Date());
-  const [clickedDate, setClickedDate] = useState();
+const Main = ({ setDay, nowDate, setNowDate, clickedDate, setClickedDate }) => {
   return (
     <Container>
       <ControlDate nowDate={nowDate} setNowDate={setNowDate} />
       <DateBox
+        setDay={setDay}
         nowDate={nowDate}
         setNowDate={setNowDate}
         clickedDate={clickedDate}

@@ -27,9 +27,16 @@ const monthList = (nowDate) => {
   for (let i = 1; i < 7 - dayLastWeek; i++) {
     result.push(new Date(nowYear, nowMonth + 1, i));
   }
+  console.log(result);
   return result;
 };
-const DateBox = ({ nowDate, setNowDate, clickedDate, setClickedDate }) => {
+const DateBox = ({
+  setDay,
+  nowDate,
+  setNowDate,
+  clickedDate,
+  setClickedDate,
+}) => {
   const allDay = monthList(nowDate);
   const weeks = ["일", "월", "화", "수", "목", "금", "토"];
   return (
@@ -40,6 +47,7 @@ const DateBox = ({ nowDate, setNowDate, clickedDate, setClickedDate }) => {
       {allDay.map((day) => {
         return (
           <AllDay
+            setDay={setDay}
             key={day}
             day={day}
             nowDate={nowDate}
