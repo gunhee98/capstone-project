@@ -4,24 +4,21 @@ import 'firebase/compat/firestore';
 import Data from './data.js'
 import "normalize.css";
 import Login from "./Login";
-import Sidebar from "./Sidebar";
+import Main from "./Main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Seongjeog from "./Seongjeog";
-import Logins from "./Logins"
-import SignupModal from './SignUp.js';
-import './style.css'
-
-
+import Home from "./Home";
 function App() {
   return (
-    <SignupModal/>
-    // <BrowserRouter>
-    //   <Sidebar>
-    //     <Routes>
-    //       <Route path="/seongjeog" element={<Seongjeog />} />
-    //     </Routes>
-    //   </Sidebar>
-    // </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/main" element={<Main />}>
+          <Route path="/main" element={<Home />} />
+          <Route path="/main/seongjeog" element={<Seongjeog />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

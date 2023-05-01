@@ -1,31 +1,16 @@
 import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
-import React, { Children, useState } from "react";
 import { NavLink } from "react-router-dom";
-const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-  const menuItem = [
-    {
-      path: "/",
-      name: "Dashboard",
-    },
-    {
-      path: "/seongjeog",
-      name: "Seongjeog",
-    },
-  ];
-  const Container = styled.div`
-    display: flex;
-  `;
+const Sidebar = ({ isOpen, menuItem }) => {
   const Side = styled.div`
     background: whitesmoke;
     height: 100vh;
     width: ${isOpen ? "0px" : "300px"};
     transition: all 0.5s;
+    border-right: 2px solid #252553;
+
     & > div {
       height: 5rem;
-      background-color: #69b030;
+
       padding: 0.5rem;
       & > img {
         width: ${isOpen ? "0px" : "250px"};
@@ -35,7 +20,7 @@ const Sidebar = ({ children }) => {
   const NavStyle = styled(NavLink)`
     display: flex;
     flex-direction: column;
-    color: black;
+    color: #252553;
 
     padding: 10px 15px;
 
@@ -46,50 +31,23 @@ const Sidebar = ({ children }) => {
       font-weight: 700;
     }
     &:hover {
-      background-color: black;
+      background-color: #252553;
       color: white;
       transition: all 0.5s;
     }
   `;
-  const Content = styled.div`
-    width: 100%;
-    height: 100vh;
-    & > div:first-child {
-      height: 5rem;
-      background-color: #69b030;
-
-      & > div {
-        background-color: yellow;
-        width: 30px;
-        height: 50px;
-      }
-    }
-    & > main {
-      height: 100%;
-    }
-  `;
-
   return (
-    <Container>
-      <Side>
-        <div>
-          <img src="https://portal.skhu.ac.kr/upload/SMN/SMN_DEFAULTINFO/logoImg2/LOGO2.svg"></img>
-        </div>
-        {menuItem.map((item, index) => (
-          <NavStyle to={item.path} key={index}>
-            <div>{item.name}</div>
-          </NavStyle>
-        ))}
-      </Side>
-      <Content>
-        <div>
-          <div>
-            <FaBars onClick={toggle} />
-          </div>
-        </div>
-        <main>{children}</main>
-      </Content>
-    </Container>
+    <Side>
+      <div>
+        <img src="https://portal.skhu.ac.kr/upload/SMN/SMN_DEFAULTINFO/logoImg2/LOGO2.svg"></img>
+      </div>
+      {menuItem.map((item) => (
+        <NavStyle to={item.path} key={item.name}>
+          <div>{item.name}</div>
+        </NavStyle>
+      ))}
+    </Side>
   );
 };
+
 export default Sidebar;
