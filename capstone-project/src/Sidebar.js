@@ -7,6 +7,7 @@ const Sidebar = ({ isOpen, menuItem }) => {
     width: ${isOpen ? "0px" : "300px"};
     transition: all 0.5s;
     border-right: 2px solid #252553;
+
     & > div {
       height: 5rem;
 

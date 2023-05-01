@@ -4,14 +4,15 @@ import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router";
-import Dashboard from "./Dashboard";
+import Home from "./calendar/Main";
+import { Link } from "react-router-dom";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     {
       path: "/main",
-      name: "Dashboard",
+      name: "Home",
     },
     {
       path: "/main/seongjeog",
@@ -20,6 +21,9 @@ const Main = () => {
   ];
   const Container = styled.div`
     display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
   `;
 
   const Content = styled.div`
@@ -44,12 +48,14 @@ const Main = () => {
         display: flex;
         align-items: center;
         margin-left: 9%;
+        white-space: nowrap;
       }
       & > div:nth-child(3) {
         margin-left: 48%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        white-space: nowrap;
         & > p {
           margin: 0;
           margin-bottom: 3px;
@@ -94,10 +100,12 @@ const Main = () => {
             <p>김건희</p>
           </div>
           <div>
-            <FiLogOut size="30" />
+            <Link to="/">
+              <FiLogOut size="30" />
+            </Link>
           </div>
         </div>
-        <main>{menuItem.path === "/main" ? <Dashboard /> : <Outlet />}</main>
+        <main>{menuItem.path === "/main" ? <Home /> : <Outlet />}</main>
       </Content>
     </Container>
   );
