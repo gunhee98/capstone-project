@@ -12,11 +12,11 @@ const Main = () => {
   const menuItem = [
     {
       path: "/main",
-      name: "Home",
+      name: "홈",
     },
     {
       path: "/main/seongjeog",
-      name: "Seongjeog",
+      name: "성적",
     },
   ];
   const Container = styled.div`

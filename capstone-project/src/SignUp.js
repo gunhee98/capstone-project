@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import "./style.css";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import { auth } from './firebase';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-function SignupForm(props) {
+
+
+function SignupForm() {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");

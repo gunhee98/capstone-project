@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Signup2 from "./Signup2.js";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { auth } from "./firebase";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const Contain = styled.div`
@@ -83,6 +87,7 @@ const Login = () => {
         border-radius: 0.5rem;
         color: white;
         font-weight: 700;
+        pointer:
       }
     }
     div {
@@ -103,7 +108,29 @@ const Login = () => {
   const [data, setData] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // 로그인 성공
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // 로그인 실패
+        console.log("errorMessage");
+      });
+  };
 
   return (
     <Contain>
@@ -121,7 +148,7 @@ const Login = () => {
         <p>통합로그인</p>
 
         <form>
-          <input type="text" placeholder="아이디"/>
+          <input type="text" placeholder="아이디" />
 
           <FontAwesomeIcon
             icon={faUser}
@@ -133,7 +160,7 @@ const Login = () => {
               opacity: 0.2,
             }}
           />
-          <input type="text" placeholder="비밀번호" />
+          <input type="password" placeholder="비밀번호" />
           <FontAwesomeIcon
             icon={faUnlock}
             size="xl"
@@ -145,21 +172,28 @@ const Login = () => {
             }}
           />
           <Link to="/main">
-            <button>로그인</button>
+            <button button type="submit">
+              로그인
+            </button>
           </Link>
         </form>
         <div>
-          <span onClick={()=>{
-            setModal(!modal);
-          }}>회원가입</span>
-          
+          <span
+            onClick={() => {
+              setModal(!modal);
+            }}
+          >
+            회원가입
+          </span>
         </div>
       </LoingForm>
 
-      <>{modal === true ? <Signup2 modal={modal} setModal={setModal}></Signup2> : null}</>
-      
+      <>
+        {modal === true ? (
+          <Signup2 modal={modal} setModal={setModal}></Signup2>
+        ) : null}
+      </>
     </Contain>
-    
   );
 };
 export default Login;
