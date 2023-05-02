@@ -1,8 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Signup2 from "./Signup2.js";
+
 const Login = () => {
   const Contain = styled.div`
     margin-top: 20rem;
@@ -96,7 +99,11 @@ const Login = () => {
       }
     }
   `;
-
+  const [modal, setModal] = useState(false);
+  const [data, setData] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
 
   return (
     <Contain>
@@ -142,11 +149,17 @@ const Login = () => {
           </Link>
         </form>
         <div>
-          <span>아이디 찾기</span>
-          <span>비밀번호 초기화</span>
+          <span onClick={()=>{
+            setModal(!modal);
+          }}>회원가입</span>
+          
         </div>
       </LoingForm>
+
+      <>{modal === true ? <Signup2 modal={modal} setModal={setModal}></Signup2> : null}</>
+      
     </Contain>
+    
   );
 };
 export default Login;

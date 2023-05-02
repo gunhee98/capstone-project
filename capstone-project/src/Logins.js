@@ -37,21 +37,21 @@ function Logins() {
       });
   };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          이메일:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <label>
-          비밀번호:
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </label>
-        <button type="submit">로그인</button>
-      </form>
-    </div> 
-  );
+  // return (
+  //   <div>
+  //     <form onSubmit={handleSubmit}>
+  //       <label>
+  //         이메일:
+  //         <input type="email" value={email} onChange={handleEmailChange} />
+  //       </label>
+  //       <label>
+  //         비밀번호:
+  //         <input type="password" value={password} onChange={handlePasswordChange} />
+  //       </label>
+  //       <button type="submit">로그인</button>
+  //     </form>
+  //   </div> 
+  // );
 }
 
 

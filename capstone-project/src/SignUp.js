@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./style.css";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignupForm(props) {
   const [email, setEmail] = useState("");
@@ -30,6 +32,20 @@ function SignupForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // 회원가입 처리를 위한 코드
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+      
   };
 
   return (
@@ -80,9 +96,8 @@ function SignupForm(props) {
           required
         />
         <div>
-            <button type="submit">가입</button>
+          <button type="submit">가입</button>
         </div>
-        
       </form>
     </div>
   );

@@ -1,3 +1,4 @@
+
 .modal {
     position: fixed;
     top: 0;
@@ -20,6 +21,25 @@
   
   label {
     display: block;
-    margin-top: 16px;
+    margin-top: 32px;
     margin-bottom: 8px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .item {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .right {
+    float: right;
+  }
+  
+  .red {
+    background-color: red;
   }
