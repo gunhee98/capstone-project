@@ -24,18 +24,19 @@ const Main = () => {
     display: flex;
     height: 100%;
     width: 100%;
-    
   `;
 
   const Content = styled.div`
     width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
+    height: 100%;
+
     & > div:first-child {
       display: flex;
       align-items: center;
       height: 4rem;
       border-bottom: 2px solid #252553;
+      width: 100%;
+
       & > div:first-child {
         display: flex;
         justify-content: center;
@@ -78,7 +79,8 @@ const Main = () => {
     }
     & > main {
       width: 100%;
-      height: 100%;
+      height: 90vh;
+      overflow-y: auto;
     }
   `;
 
