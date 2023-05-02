@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import { Outlet } from "react-router";
 import Home from "./calendar/Main";
 import { Link } from "react-router-dom";
+
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);

@@ -9,6 +9,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { auth } from "./firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import Logins from "./Logins.js"
 
 const Login = () => {
   const Contain = styled.div`
@@ -95,7 +96,7 @@ const Login = () => {
       margin-top: 3rem;
       border-radius: 0 0 1.5rem 1.5rem;
       background-color: #252553;
-      width: 100%;
+      width: 87%;
       text-align: center;
       padding: 2rem;
       span {
@@ -148,7 +149,7 @@ const Login = () => {
         <p>통합로그인</p>
 
         <form>
-          <input type="text" placeholder="아이디" />
+          <input type="text" placeholder="아이디" value={email} onChange={handleEmailChange} />
 
           <FontAwesomeIcon
             icon={faUser}
@@ -192,7 +193,9 @@ const Login = () => {
         {modal === true ? (
           <Signup2 modal={modal} setModal={setModal}></Signup2>
         ) : null}
+        <Logins></Logins>
       </>
+
     </Contain>
   );
 };

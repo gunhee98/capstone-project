@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { getDatabase, ref, onValue } from "./firebase.js";
+
 
 const Seongjeog = () => {
   const arr = [];
@@ -47,7 +51,7 @@ const Seongjeog = () => {
       text-align: center;
     }
   `;
-
+  
   return (
     <Contain>
       <div>성적 증명서</div>

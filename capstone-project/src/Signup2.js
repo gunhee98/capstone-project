@@ -43,7 +43,7 @@ function Signup2(props) {
         // 로그인 성공
         const user = userCredential.user;
         alert("회원가입에 성공하였습니다.");
-
+        props.setModal(false);
         // const db = firebase.firestore();
         // db.collection("users").add({
         //   name: name,
