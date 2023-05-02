@@ -110,38 +110,7 @@ const Seongjeog = () => {
   for (let i = 0; i <= 250; i++) {
     arr.push({ ...info, no: info.no + i });
   }
-  const Contain = styled.div`
-    width: 80%;
-    height: 100%;
-    padding: 1rem;
-    margin-right: auto;
-    margin-left: auto;
-    & > div:first-child {
-      text-align: center;
-      width: 100%;
-      height: 5%;
-      background-color: #252553;
-      color: whitesmoke;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    & > div:nth-child(2) {
-      min-height: 30%;
-      max-height: 80%;
-      overflow-y: auto;
-    }
-    table {
-      width: 100%;
-      border: 1px solid #444444;
-      border-collapse: collapse;
-    }
-    th,
-    td {
-      border: 1px solid #444444;
-      text-align: center;
-    }
-  `;
-  
+
   return (
     <Contain>
       <div>성적 증명서</div>
