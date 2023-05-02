@@ -31,7 +31,7 @@ function Logins() {
         // 로그인 실패 
         // const errorCode = error.code;
         // const errorMessage = error.message;
-        console.log("errorMessage");
+        console.log("로그인에 실패하였습니다.");
       });
   };
 

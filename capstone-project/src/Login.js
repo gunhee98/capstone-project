@@ -130,14 +130,14 @@ const Login = () => {
       .then((userCredential) => {
         // 로그인 성공
         const user = userCredential.user;
-        alert('성공')
+        alert('로그인이 되었습니다.')
         console.log(user);
         navigate('/main');
       })
       .catch((error) => {
         // 로그인 실패
         console.log("errorMessage");
-        alert('실패')
+        alert('로그인이 실패하였습니다.')
       });
   };
 
