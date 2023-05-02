@@ -11,6 +11,7 @@ import Home from "./Home";
 import SignupForm from "./SignUp.js";
 import Logins from "./Logins.js"
 import Signup2 from "./Signup2.js"
+import Chat from "./Chat.js"
 
 function App() {
   return (

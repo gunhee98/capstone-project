@@ -1,0 +1,30 @@
+
+.chatContainer {
+    width: 500px;
+    box-shadow: 0 0 10px -5px;
+    background-color: white;
+    height: 400px; 
+    overflow-y: scroll;
+  }
+.chatBox {
+    margin-top: 10px;
+    display: flex;
+  }
+.chatMsg {
+    margin-left: 10px;
+    background: #ddd;
+    padding: 5px;
+    max-width: 200px;
+  }
+.user {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+ .center {
+    width: 500px;
+ }
+
+ .chatInput {
+    width: 430px;
+ }

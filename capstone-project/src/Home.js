@@ -2,6 +2,7 @@ import Main from "./calendar/Main";
 import styled from "styled-components";
 import TodoContain from "./todo/TodoContain";
 import { useState } from "react";
+import Chat from "./Chat.js"
 const Container = styled.div`
   display: flex;
   justify-content: space-around;
@@ -21,6 +22,7 @@ const Home = () => {
         setClickedDate={setClickedDate}
       />
       <TodoContain days={days} nowDate={nowDate} />
+      <Chat></Chat>
     </Container>
   );
 };
