@@ -3,8 +3,8 @@ import ControlDate from "./ControlDate";
 import DateBox from "./DateBox";
 import styled from "styled-components";
 const Container = styled.div`
-  width: 400px;
-  height: 200px;
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
 `;
