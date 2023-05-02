@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 const Container = styled.div`
   border: 1px solid gray;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +15,10 @@ const Container = styled.div`
     ${({ sameDay }) =>
       sameDay
         ? css`
+            
             color: white;
-            background-color: blue;
+            background-color:rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
           `
         : css``}
     ${({ clickDay }) =>

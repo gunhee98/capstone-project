@@ -6,6 +6,7 @@ const Container = styled.div`
   flex: 1;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  background-color: white;
 `;
 const monthList = (nowDate) => {
   const nowYear = nowDate.getFullYear();

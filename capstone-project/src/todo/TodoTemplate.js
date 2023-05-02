@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Todo = styled.div`
   width: 512px;
-
+  box-shadow: 0 0 10px -5px;
+  background-color: white;
   border-radius: 4px;
   overflow: hidden;
   & > div:first-child {

@@ -5,7 +5,7 @@ import Data from './data.js'
 import "normalize.css";
 import Login from "./Login";
 import Main from "./Main";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Seongjeog from "./Seongjeog";
 import Home from "./Home";
 import SignupForm from "./SignUp.js";

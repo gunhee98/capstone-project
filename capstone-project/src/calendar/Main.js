@@ -4,9 +4,10 @@ import DateBox from "./DateBox";
 import styled from "styled-components";
 const Container = styled.div`
   width: 400px;
-  height: 200px;
+  height: auto;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 10px -5px;
 `;
 const Main = ({ setDay, nowDate, setNowDate, clickedDate, setClickedDate }) => {
   return (
