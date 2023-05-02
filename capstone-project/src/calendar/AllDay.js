@@ -26,7 +26,14 @@ const Container = styled.div`
         : css``}
   }
 `;
-const AllDay = ({ day, nowDate, setNowDate, clickedDate, setClickedDate }) => {
+const AllDay = ({
+  setDay,
+  day,
+  nowDate,
+  setNowDate,
+  clickedDate,
+  setClickedDate,
+}) => {
   const nowTime = new Date();
 
   const sameMonth = nowDate.getMonth() === day.getMonth();
@@ -42,6 +49,9 @@ const AllDay = ({ day, nowDate, setNowDate, clickedDate, setClickedDate }) => {
 
   const clickDate = () => {
     setClickedDate(day);
+    const date = new Date(nowDate.getTime());
+    date.setDate(day.getDate());
+    setNowDate(date);
   };
   return (
     <Container
