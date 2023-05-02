@@ -9,7 +9,6 @@ import {
 } from "firebase/auth";
 import "./style.css";
 import Login from "./Login.js";
-import {  doc, setDoc } from "firebase/firestore";
 
 function Signup2(props) {
   const [data, setData] = useState([]);
@@ -18,7 +17,7 @@ function Signup2(props) {
   const [name, setName] = useState("");
   const [studentId, setStudentId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  
+    
 
 
   const handleClose = () => {
@@ -41,6 +40,7 @@ function Signup2(props) {
     setStudentId(event.target.value);
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const auth = getAuth();
@@ -50,7 +50,8 @@ function Signup2(props) {
         const user = userCredential.user;
         await updateProfile(auth.currentUser, {
           displayName: name,
-        })
+        });
+        
         alert("회원가입에 성공하였습니다.");
         props.setModal(false);
       })
@@ -93,15 +94,6 @@ function Signup2(props) {
               type="text"
               value={name}
               onChange={handleNameChange}
-            />
-          </label>
-          <label>
-            학번:
-            <input
-              className="right"
-              type="text"
-              value={studentId}
-              onChange={handleStudentIdChange}
             />
           </label>
         </div>

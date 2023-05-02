@@ -99,7 +99,7 @@ const Main = () => {
           </div>
           <div>
             <p>IT융합자율학부</p>
-            <p>김건희</p>
+            <p>박용희</p>
           </div>
           <div>
             <Link to="/">

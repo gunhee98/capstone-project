@@ -26,7 +26,7 @@ function Data() {
     });
   }, []);
 
-  const handleAddData = () => {
+  const handleAddData = (e) => {
    
     firebase.initializeApp({
       projectId: "capstone-d844e",
@@ -35,9 +35,8 @@ function Data() {
 
     const db = firebase.firestore();
 
-    db.collection("privacy").add({
-      email: email,
-      name: name,
+    db.collection("users").add({
+      e: e,
     }).then(() => {
       console.log("Data added successfully!");
     }).catch((error) => {
