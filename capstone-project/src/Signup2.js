@@ -9,16 +9,17 @@ import {
 } from "firebase/auth";
 import "./style.css";
 import Login from "./Login.js";
-import { getDatabase, ref, set } from "firebase/database";
+import {  doc, setDoc } from "firebase/firestore";
 
 function Signup2(props) {
   const [data, setData] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [studentId, setStudentId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const database = getDatabase();
+  
+
 
   const handleClose = () => {
     props.setModal(false);
@@ -36,20 +37,20 @@ function Signup2(props) {
     setName(event.target.value);
   };
 
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
+  const handleStudentIdChange = (event) => {
+    setStudentId(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const auth = getAuth();
+
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         const user = userCredential.user;
-        await updateProfile(auth.currentUser, { 
-            displayName:name,
-         });
+        await updateProfile(auth.currentUser, {
+          displayName: name,
+        })
         alert("회원가입에 성공하였습니다.");
         props.setModal(false);
       })
@@ -94,7 +95,15 @@ function Signup2(props) {
               onChange={handleNameChange}
             />
           </label>
-          
+          <label>
+            학번:
+            <input
+              className="right"
+              type="text"
+              value={studentId}
+              onChange={handleStudentIdChange}
+            />
+          </label>
         </div>
 
         <button className="right" type="submit">
